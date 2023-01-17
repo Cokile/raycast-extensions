@@ -1,0 +1,74 @@
+{
+    "$schema": "https://www.raycast.com/schemas/extension.json",
+    "name": "reading",
+    "title": "Reading",
+    "description": "Recording article in current browser tab.",
+    "icon": "command-icon.png",
+    "author": "CokileCeoi",
+    "owner": "elica",
+    "categories": [
+        "Data"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@raycast/api": "^1.45.3",
+        "axios": "^1.2.2",
+        "run-applescript": "^6.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "18.8.3",
+        "@types/react": "18.0.9",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "prettier": "^2.5.1",
+        "typescript": "^4.4.3"
+    },
+    "scripts": {
+        "build": "ray build -e dist",
+        "dev": "ray develop",
+        "fix-lint": "ray lint --fix",
+        "lint": "ray lint",
+        "publish": "ray publish"
+    },
+    "commands": [
+        {
+            "name": "reading",
+            "title": "Record Reading",
+            "description": "Record the reading in current browser tab.",
+            "mode": "no-view",
+            "arguments": [
+                {
+                    "name": "parameters",
+                    "type": "text",
+                    "placeholder": "Star/Category/Location",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "preferences": [
+        {
+            "name": "telegramBotToken",
+            "description": "Enter your Telegram bot token",
+            "type": "password",
+            "title": "Telegram Bot Token",
+            "required": true
+        },
+        {
+            "name": "telegramChatID",
+            "description": "Enter your Telegram chat id",
+            "type": "textfield",
+            "title": "Telegram Chat ID",
+            "required": true
+        },
+        {
+            "name": "obsidianVaultPath",
+            "description": "Choose your Obsidian vault path",
+            "type": "directory",
+            "title": "Obsidian Vault Path",
+            "required": true
+        }
+    ]
+}
